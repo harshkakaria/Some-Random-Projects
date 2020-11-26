@@ -42,7 +42,6 @@ while(True):
 	mask_inv = 255-mask 
 	mask = cv2.dilate(mask,kernel,5)
 	
-	#The mixing of frames in a combination to achieve the required frame
 	b = frame[:,:,0]
 	g = frame[:,:,1]
 	r = frame[:,:,2]
@@ -61,7 +60,7 @@ while(True):
 
 	final = cv2.bitwise_or(frame_inv, blanket_area)
 
-	cv2.imshow("Harry's Cloak",final)
+	cv2.imshow("INVI CLOTH!!",final)
 
 	if(cv2.waitKey(3) == ord('q')):
 		break;

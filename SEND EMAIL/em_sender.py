@@ -1,5 +1,6 @@
 import stdiomask
 import smtplib
+import time
 
 sender_email = str(input("enter sender's email ID: "))
 rec_email = str(input("enter reciver's email ID: "))

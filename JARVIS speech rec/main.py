@@ -10,6 +10,7 @@ import pywhatkit
 import speech_recognition as sr
 import wikipedia
 
+
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice',voices[0].id)
@@ -118,6 +119,7 @@ if __name__ == "__main__":
         elif "open ebay" in IDK:
             speak("opening ebay")
             webbrowser.open("https://ebay.com")
+
 
         elif "open flipkart" in IDK:
             speak("opening facebook")

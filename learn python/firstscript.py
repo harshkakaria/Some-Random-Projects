@@ -1,20 +1,14 @@
-print("Calculator")
-a = floa(input("enter ur First no. :"))
-opr = str(input("enter ur operator :"))
-b = float(input("enter ur second no. :"))
+import subprocess
 
-if opr == "+":
-    print("sum of two no. is :",a+b)
+data = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles']).decode('utf-8').split('\n')
 
-elif  opr == "-":
-    print("the diff between two no. is :",a - b)
+profiles = [i.split(":")[1][1:-1] for i in data if "All User Profile" in i]
 
-elif opr == "*" or "x":
-    print("the multiplication between two no. is :",a*b)
-
-elif  opr == "/":
-    print("the division between two no. is :",a/b)
-
-else:
-    print("unrecognised commands")
-    
+for i in profiles:
+    results = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', i,
+                        'key=clear']).decode('utf-8').split('\n')
+    results = [b.split(":")[1][1:-1] for b in results if "Key Content" in b]
+    try:
+        print ("{:<30}|  {:<}".format(i, results[0]))
+    except IndexError:
+        print ("{:<30}|  {:<}".format(i, ""))

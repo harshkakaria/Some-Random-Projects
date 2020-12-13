@@ -125,7 +125,7 @@ if __name__ == "__main__":
 
         elif "open roblox" in IDK:
             speak("opening RBX")
-            webbrowser.open("https://roblox.com/home")
+            webbrowser.open("https://roblox.com/home
 
         else:
             speak("srry sir cant understad you please reapeat?")

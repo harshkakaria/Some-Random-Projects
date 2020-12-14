@@ -49,7 +49,7 @@ if __name__ == "__main__":
         if "wikipedia" in IDK:
             speak("searching details....Wait")
             IDK.replace("wikipedia","")
-            results = wikipedia.summary(IDK,sentences=2)
+            results = wikipedia.summary(IDK,sentences=3)
             print(results)
             speak(results)
 
@@ -125,7 +125,7 @@ if __name__ == "__main__":
 
         elif "open roblox" in IDK:
             speak("opening RBX")
-            webbrowser.open("https://roblox.com/home
+            webbrowser.open("https://roblox.com/home")
 
         else:
             speak("srry sir cant understad you please reapeat?")

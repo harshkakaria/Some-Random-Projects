@@ -6,7 +6,7 @@ covid = Covid()
 
 covid.get_data()
 
-cases = covid.get_status_by_country_name("india")
+cases = covid.get_status_by_country_name("us")
 
 s = pd.Series(cases)
 

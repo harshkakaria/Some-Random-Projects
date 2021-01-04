@@ -1,4 +1,5 @@
 import subprocess
+import time
 
 data = subprocess.check_output(['netsh', 'wlan', 'show', 'profiles']).decode('utf-8').split('\n')
 
@@ -12,3 +13,5 @@ for i in profiles:
         print ("{:<30}|  {:<}".format(i, results[0]))
     except IndexError:
         print ("{:<30}|  {:<}".format(i, ""))
+
+time.sleep(10)
